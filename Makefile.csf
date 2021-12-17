@@ -46,16 +46,15 @@ ARGS ?= $(EXTRA_ARGS)
 .DEFAULT_GOAL := help
 
 .PHONY: all
-all: init clean build ## Test, build
+all: init clean cross ## Test, build
 	@echo "+ $@"
 
 .PHONY: init
-init: ## Initializes go tools this Makefile uses: golint, staticcheck, goimports, checkmake
+init: ## Initializes go tools this Makefile uses: golint, staticcheck, goimports
 	@echo "+ $@"
 	go get -u golang.org/x/lint/golint
 	go get -u honnef.co/go/tools/cmd/staticcheck
 	go get -u golang.org/x/tools/cmd/goimports
-	go get -u github.com/mrtazz/checkmake
 	@echo "Initialized tools"
 
 .PHONY: build

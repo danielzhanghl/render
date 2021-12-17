@@ -6,7 +6,6 @@ import (
 
 	"github.com/VirtusLab/render/renderer/parameters"
 
-	"github.com/Masterminds/sprig/v3"
 	"github.com/sirupsen/logrus"
 	"github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
@@ -191,7 +190,7 @@ func TestRenderer_NamedRender_Func(t *testing.T) {
 
 			result, err := New(
 				WithParameters(params),
-				WithMoreFunctions(sprig.TxtFuncMap()),
+				),
 			).NamedRender(tt.name, input)
 
 			assert.NoError(t, err, tt.name)
@@ -214,7 +213,7 @@ func TestRenderer_Render_Pipe(t *testing.T) {
 
 			result, err := New(
 				WithParameters(params),
-				WithMoreFunctions(sprig.TxtFuncMap()),
+				),
 			).NamedRender(tt.name, input)
 
 			assert.NoError(t, err, tt.name)

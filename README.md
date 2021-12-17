@@ -11,6 +11,8 @@
 Universal data-driven templates for generating textual output. Can be used as a single static binary (no dependencies)
 or as a golang library.
 
+* simpified render to forked project: no Sprig related fuctions, no "Cloud KMS (AWS, Amazon, Google) based cryptography functions form crypt", just simple render from input and template to output, then no CVEs like https://github.com/VirtusLab/render/issues/31.
+
 Just some of the things to `render`:
 - configuration files
 - Infrastructure as Code files (e.g. CloudFormation templates)
